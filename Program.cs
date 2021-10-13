@@ -8,14 +8,14 @@ namespace Korsunovulesanded
 {
     class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
 
             Console.WriteLine("Esimene ülesanne");
 
-            Random rng = new Random();
-            int n = rng.Next(1, 49);
-            int m = rng.Next(50, 100);
+            Random rnd = new Random();
+            int n = rnd.Next(1, 49);
+            int m = rnd.Next(50, 100);
             Console.WriteLine($"{n}, {m}");
             int[] numbers = new int[m - n + 1];
             int t = 0;
@@ -46,26 +46,35 @@ namespace Korsunovulesanded
             Console.WriteLine($"Nums AVG = {avg}\nNums SUM = {sum}\nNums multiplied = {mult}");
 
             Console.WriteLine("Kolmas Ülesanne");
+
             string text;
             do
             {
                 Console.WriteLine("Oosta elevant");
-                Console.Write("Oosta");
+                Console.Write("Oosta ");
                 text = Console.ReadLine();
             } while (text != "elevant");
             Console.WriteLine("Sina ostid elevant");
 
             Console.WriteLine("Neljas ülesanne");
 
-            int A = rng.Next(1, 25);//arvuti arv
+            int A = rnd.Next(1, 5);//arvuti arv
             int AA;//kasutaja arv
-            int K = 0;//katsed
+            int K = 1;//katsed
             do
             {
-                Console.WriteLine("{0} Katse. Mis arv?", K);
+                Console.WriteLine("{0}. Katse. Mis arv?", K);
                 AA = int.Parse(Console.ReadLine());
-                K++;
-            } while (AA!=A || K!=6);
+                K=K+1;
+            } while (AA!=A && K!=6);
+            if (AA == A)
+            {
+                Console.WriteLine("Palju õnne!"+A);
+            }
+            else
+            {
+                Console.WriteLine("Proovi veel!");
+            }
 
             Console.ReadLine();
         }
