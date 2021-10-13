@@ -10,7 +10,7 @@ namespace Korsunovulesanded
     {
         public static void Main(string[] argumendid)
         {
-
+            /*
             Console.WriteLine("Esimene ülesanne");
 
             Random rnd = new Random();
@@ -75,7 +75,27 @@ namespace Korsunovulesanded
             {
                 Console.WriteLine("Proovi veel!");
             }
+            */
+            Console.WriteLine("Viies ülesanne");
 
+            int arv;
+            int[] arvud = new int[4];
+
+            for (int i=0; i<4; i++)
+            {
+                Console.WriteLine("Sisesta {0} arv:",i+1);
+                arv = int.Parse(Console.ReadLine());
+                arvud[i] = arv;
+            }
+            Array.Sort(arvud);
+
+            int arv4 = 0;
+            Array.Reverse(arvud);
+            foreach(var a in arvud)
+            {
+                arv4=arv4*10+a;
+            }
+            Console.WriteLine(arv4);
             Console.ReadLine();
         }
     }
