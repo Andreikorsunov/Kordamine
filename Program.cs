@@ -55,12 +55,19 @@ namespace Korsunovulesanded
             } while (text != "elevant");
             Console.WriteLine("Sina ostid elevant");
 
-            int A = rng.Next(1, 25);
-            int AA;
+            Console.WriteLine("Neljas ülesanne");
+
+            int A = rng.Next(1, 25);//arvuti arv
+            int AA;//kasutaja arv
+            int K = 0;//katsed
             do
             {
+                Console.WriteLine("{0} Katse. Mis arv?", K);
                 AA = int.Parse(Console.ReadLine());
-            } while (AA!=A);
+                K++;
+            } while (AA!=A || K!=6);
+
+            Console.ReadLine();
         }
     }
 }
