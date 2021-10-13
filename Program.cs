@@ -10,21 +10,28 @@ namespace Korsunovulesanded
     {
         static void Main(string[] args)
         {
-            Random rnd = new Random();
-            int n = rnd.Next(2, 6);
-            int m = rnd.Next(7, 14);
 
-            int[] mass = new int[(m - n)];
-            for(int i= n; i < m+1; i++)
+            Console.WriteLine("Esimene ülesanne");
+
+            Random rng = new Random();
+            int n = rng.Next(1, 49);
+            int m = rng.Next(50, 100);
+            Console.WriteLine($"{n}, {m}");
+            int[] numbers = new int[m - n + 1];
+            int t = 0;
+            for (int i = n; i < m + 1; i++)
             {
-                Console.Write("");
-                mass[i - n] = i;
-                Console.WriteLine(" {0} ", i * i);
+                numbers[t] = i;
+                Console.WriteLine($"{i} is the root of {i * i}, ");
+                t++;
             }
-            foreach(var M in mass)
+            foreach (var j in numbers)
             {
-                Console.WriteLine(m);
+                Console.Write("{0} ", j);
             }
+            Console.WriteLine("\n");
+
+            Console.WriteLine("Teine ülesanne");
             int sum = 0;
             int mult = 1;
             double avg = 0.0;
@@ -38,6 +45,7 @@ namespace Korsunovulesanded
             avg = sum / 5;
             Console.WriteLine($"Nums AVG = {avg}\nNums SUM = {sum}\nNums multiplied = {mult}");
 
+            Console.WriteLine("Kolmas Ülesanne");
             string text;
             do
             {
@@ -47,7 +55,12 @@ namespace Korsunovulesanded
             } while (text != "elevant");
             Console.WriteLine("Sina ostid elevant");
 
-
+            int A = rng.Next(1, 25);
+            int AA;
+            do
+            {
+                AA = int.Parse(Console.ReadLine());
+            } while (AA!=A);
         }
     }
 }
